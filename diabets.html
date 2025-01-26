@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #333;
+        }
+        .form-container {
+            padding: 30px;
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+        .form-container h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+        .form-container input {
+            margin-bottom: 15px;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: calc(100% - 24px);
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        .form-container input:focus {
+            outline: none;
+            border-color: #6a1b9a;
+            box-shadow: 0 0 5px rgba(106, 27, 154, 0.5);
+        }
+        .form-container input[type="submit"] {
+            background: linear-gradient(135deg, #6a1b9a, #8e24aa);
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            transition: background 0.3s;
+        }
+        .form-container input[type="submit"]:hover {
+            background: linear-gradient(135deg, #8e24aa, #6a1b9a);
+        }
+        .form-container input::placeholder {
+            color: #aaa;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Diabetes Prediction</h2>
+        <form method="POST" action="/predict_diabetes">
+            <input type="text" name="pregnancies" placeholder="Enter number of pregnancies" required>
+            <input type="text" name="glucose" placeholder="Enter glucose level" required>
+            <input type="text" name="bloodpressure" placeholder="Enter blood pressure" required>
+            <input type="text" name="skinthickness" placeholder="Enter skin thickness" required>
+            <input type="text" name="insulin" placeholder="Enter insulin level" required>
+            <input type="text" name="bmi" placeholder="Enter BMI" required>
+            <input type="text" name="dpf" placeholder="Enter diabetes pedigree function" required>
+            <input type="text" name="age" placeholder="Enter age" required>
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</body>
+</html>
